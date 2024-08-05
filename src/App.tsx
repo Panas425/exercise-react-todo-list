@@ -1,7 +1,10 @@
+import { Routers } from "./Routers";
+
+
 export function App() {
   return (
     <>
-      <h1>This is the App component</h1>
+    <Routers></Routers>
     </>
   );
 }
