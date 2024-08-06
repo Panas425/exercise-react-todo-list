@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { ReactElement, useState } from 'react';
+import { useLocation, useNavigate, useOutletContext } from 'react-router-dom';
 import { TextToDo } from './TextToDo';
+import { IToDoContext } from '../Interfaces';
 
-interface EditToDoProps {
-    onEdit: (id: string, text: string) => void;
-}
 
-export const EditInput: React.FC<EditToDoProps> = ({ onEdit }) => {
+export function EditInput(): ReactElement {
+    const {handleEditTodo} = useOutletContext<IToDoContext>();
     const location = useLocation();
     const navigate = useNavigate();
     const { id } = location.state as { id: string };
@@ -17,7 +16,7 @@ export const EditInput: React.FC<EditToDoProps> = ({ onEdit }) => {
 
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        onEdit(id, text);
+        handleEditTodo(id, text);
         navigate('/');
     };
 

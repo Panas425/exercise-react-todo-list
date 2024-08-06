@@ -1,16 +1,18 @@
+import { ReactElement } from "react";
+
 interface AuthorToDoProps {
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     text: string;
 }
 
-export const AuthorToDo: React.FC<AuthorToDoProps> = ({handleChange, text}) => {
+export function AuthorToDo(props: AuthorToDoProps): ReactElement<AuthorToDoProps> {
 
     return (
             <input
                 type="text"
                 id="text"
-                value={text}
-                onChange={handleChange}
+                value={props.text}
+                onChange={props.handleChange}
                 placeholder="Add Author"
             />
     );

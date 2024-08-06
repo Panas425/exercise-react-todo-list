@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { IToDo } from '../Interfaces';
+import React, { ReactElement, useState } from 'react';
+import { useNavigate, useOutletContext } from 'react-router-dom';
+import { IToDo, IToDoContext } from '../Interfaces';
 import { TextToDo } from './TextToDo';
 import { AuthorToDo } from './AuthorToDo';
 
-interface AddToDoPageProps {
-    onAdd: (todo: IToDo) => void;
-}
 
-export const ListInput: React.FC<AddToDoPageProps> = ({ onAdd }) => {
+
+export function ListInput(): ReactElement{
+    const {handleAddTodo} = useOutletContext<IToDoContext>();
     const [author, setAuthor] = useState<string>('');
     const [text, setText] = useState<string>('');
     const navigate = useNavigate();
@@ -24,7 +23,7 @@ export const ListInput: React.FC<AddToDoPageProps> = ({ onAdd }) => {
             author,
             text,
         };
-        onAdd(newTodo);
+        handleAddTodo(newTodo);
         navigate('/');
     };
 
