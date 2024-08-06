@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 interface TextToDoProps {
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     text: string;
 }
 
-export const TextToDo: React.FC<TextToDoProps> = ({handleChange, text}) => {
+export function TextToDo(props: TextToDoProps): ReactElement {
     return (
         <input
           id="todolist"
           name="todolist"
-          onChange={handleChange}
-          value={text}
+          onChange={props.handleChange}
+          value={props.text}
           placeholder='ToDo'
         />
     );
