@@ -21,13 +21,13 @@ export function EditInput(): ReactElement {
     };
 
     return (
-        <div>
+        <div className='input-container'>
             <h1>Edit Todo</h1>
             <form>
                 <div>
                     <TextToDo handleChange={handleTextChange} text={text} />
                 </div>
-                <button onClick={handleSubmit}>Edit Todo</button>
+                <button className='add-button' onClick={handleSubmit}>Edit Todo</button>
             </form>
         </div>
     );

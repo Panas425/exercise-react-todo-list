@@ -9,11 +9,12 @@
 .list-item {
     border-style: solid;
     height: auto;
-    width: 50%;
-    display: flex; 
+    width: 300px;
+    min-width: 30px; 
     align-items: center; 
     justify-content: center; 
     margin: 10px;
+    margin-top: 0;
     display: grid;
     grid-template-columns: 1fr;
     word-break: break-all;
@@ -28,6 +29,14 @@
     margin-top: 20px;
 }
 
-.buttons button {
-    margin-left: 10px;
+.buttons-list {
+    margin: 100px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr; 
+    align-items: center; 
+    justify-content: center; 
+    width: auto; 
 }

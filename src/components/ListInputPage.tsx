@@ -3,7 +3,7 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import { IToDo, IToDoContext } from '../Interfaces';
 import { TextToDo } from './TextToDo';
 import { AuthorToDo } from './AuthorToDo';
-
+import './ListInputPage.css'
 
 
 export function ListInput(): ReactElement{
@@ -37,7 +37,7 @@ export function ListInput(): ReactElement{
     }
 
     return (
-        <div>
+        <div className='input-container'>
             <h1>Add New Todo</h1>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -46,7 +46,7 @@ export function ListInput(): ReactElement{
                 <div>
                     <TextToDo handleChange={handleTextChange} text={text}></TextToDo>
                 </div>
-                <button type="submit">Add Todo</button>
+                <button className='add-button' type="submit">Add Todo</button>
             </form>
         </div>
     );
